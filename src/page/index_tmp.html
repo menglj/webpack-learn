@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+  <style>
+    #toggle {
+    width: 100px;
+    height: 100px;
+    background: #ccc;
+  }
+  </style>
+</head>
+<body>
+    <ul class="nav nav-pills">
+        <li role="presentation" class="active"><a href="#">Home</a></li>
+        <li role="presentation"><a href="#">Profile</a></li>
+        <li role="presentation"><a href="#">Messages</a></li>
+    </ul>
+    <div id="toggle">测试juqery-ul的bind方法</div>
+
+    <form class="form-inline">
+        <div class="form-group">
+            <label>时间：</label>
+            <div class="input-group date form_datetime_day">
+              <input type="text" class="form-control" id="start_date">
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                  </div>                                                               
+        </div>                          
+      </form>
+      
+  <script>
+    $(function(){ 
+      swal("hello word")  ;
+      $( document ).click(function() {
+         $( "#toggle" ).toggle( "blind" );
+      });
+    
+       
+           $('.form_datetime_day').datetimepicker({  
+              language: 'zh-CN',
+              format: 'yyyy-mm-dd hh:ii:ss',
+              autoclose: true, 
+              todayBtn: true,
+              showClear:true,
+              startView: 'month',
+              minView:'month',
+              maxView:'decade',
+              toolbarPlacement:'bottom',
+              showTodayButton:false,
+              icons:{today:'glyphicon glyphicon-time'},
+              todayBtn:'linked'
+		      });	
+      console.log(jquery);
+    })
+  </script>
+</body>
+</html>
